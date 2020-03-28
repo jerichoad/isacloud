@@ -1,15 +1,9 @@
 <?php
 $dbhost = getenv("MYSQL_SERVICE_HOST");
-$conn = mysqli_connect($dbhost,'root','','jerichodb');
-
-function query($query){
-    global $conn;
-    $result = mysqli_query($conn,$query);
-    $rows = [];
-    while($row = mysqli_fetch_assoc($result)){
-        $rows[] = $row;
-    }
-    return $rows;
+$conn = new mysqli($dbhost,'root','ubaya','jerichodb');
+if ($c->connect_error) {
+    echo "Unable to connect, please try again";
+    die();
 }
 
 ?>
