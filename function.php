@@ -1,5 +1,6 @@
 <?php
-$conn = mysqli_connect("MYSQL_SERVICE_HOST",'root','','jerichodb');
+$dbhost = getenv("MYSQL_SERVICE_HOST");
+$conn = mysqli_connect($dbhost,'root','','jerichodb');
 
 function query($query){
     global $conn;
