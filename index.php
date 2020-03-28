@@ -1,8 +1,6 @@
 <?php
 
 require_once("function.php");
-$mahasiswa = query("SELECT * FROM mahasiswa");
-$result = $c
 
 ?>
 <!DOCTYPE html>
@@ -22,10 +20,10 @@ $result = $c
 
         <?php 
         $sql = "SELECT * FROM mahasiswa";
-        $result = $c->query($sql);
+        $result = $conn->query($sql);
         if ($result->num_rows > 0) {
     
-          $drivers = array();
+          $mhs = array();
           $i = 0;
 
             while ($obj = $result->fetch_assoc()) {
